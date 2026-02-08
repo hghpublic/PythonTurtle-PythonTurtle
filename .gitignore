@@ -17,3 +17,6 @@ __pycache__/
 /PythonTurtle/
 /*.egg-info
 /*.spec
+
+# macos
+.DS_Store
