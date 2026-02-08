@@ -61,7 +61,7 @@ class TurtleWidget(wx.Panel):
         widget_size = Vector(self.GetSize())
         top_left_corner = (-BITMAP_SIZE + widget_size) / 2.0
 
-        dc.DrawBitmap(self.bitmap, *top_left_corner)
+        dc.DrawBitmap(self.bitmap, top_left_corner)
 
         # draw the turtle
         if self.turtle.visible:
@@ -103,7 +103,7 @@ def draw_bitmap_to_dc_rotated(dc, bitmap, angle, point):
     Rotate a bitmap and write it to the supplied device context.
     """
     img = bitmap.ConvertToImage()
-    img_centre = wx.Point(img.GetWidth() / 2.0, img.GetHeight() / 2.0)
+    img_centre = wx.Point(int(img.GetWidth() / 2.0), int(img.GetHeight() / 2.0))
     img = img.Rotate(angle, img_centre, interpolating=True)
     new_point = Vector(point) - Vector(img.GetSize()) / 2
     dc.DrawBitmap(img.ConvertToBitmap(), new_point, useMask=True)
