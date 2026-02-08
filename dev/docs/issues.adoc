@@ -1,0 +1,38 @@
+= Issues
+
+https://www.wxpython.org/
+
+https://wxwidgets.org/
+
+----
+Python 3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+  File "<console>", line 1
+    print 'Startup script executed: /home/vscode/.vscode-server/data/User/workspaceStorage/efaba6bf1eb5a085f735f70a7d204ace/ms-python.python/pythonrc.py'; execfile('/home/vscode/.vscode-server/data/User/workspaceStorage/efaba6bf1eb5a085f735f70a7d204ace/ms-python.python/pythonrc.py')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
+>>> help
+<function TurtleProcess.run.<locals>.<lambda> at 0xffff98dcb420>
+>>> 
+----
+
+
+----
+❯ python3 -m pythonturtle
+wx._core.wxAssertionError: C++ assertion "nNew != dynamicEvents.size()" failed at ./src/common/event.cpp(1930) in SearchDynamicEventTable(): 
+
+The above exception was the direct cause of the following exception:
+
+SystemError: <class 'wx._stc.StyledTextEvent'> returned a result with an exception set
+wx._core.wxAssertionError: C++ assertion "nNew != dynamicEvents.size()" failed at ./src/common/event.cpp(1930) in SearchDynamicEventTable(): 
+
+The above exception was the direct cause of the following exception:
+
+SystemError: <class 'wx._stc.StyledTextEvent'> returned a result with an exception set
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/wx/core.py", line 3427, in <lambda>
+    lambda event: event.callable(*event.args, **event.kw) )
+                  ^^^^^^^^^^^^^^
+wx._core.wxAssertionError: C++ assertion "nNew != dynamicEvents.size()" failed at ./src/common/event.cpp(1930) in SearchDynamicEventTable(): 
+[1]    14008 segmentation fault  python3 -m pythonturtle
+----

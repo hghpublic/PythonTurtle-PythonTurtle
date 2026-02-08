@@ -1,0 +1,35 @@
+= Python
+
+----
+❯ python3 -m site
+sys.path = [
+    '/workspaces/PythonTurtle-PythonTurtle',
+    '/usr/lib/python312.zip',
+    '/usr/lib/python3.12',
+    '/usr/lib/python3.12/lib-dynload',
+    '/usr/local/lib/python3.12/dist-packages',
+    '/usr/lib/python3/dist-packages',
+]
+USER_BASE: '/home/vscode/.local' (doesn't exist)
+USER_SITE: '/home/vscode/.local/lib/python3.12/site-packages' (doesn't exist)
+ENABLE_USER_SITE: True
+----
+
+
+----
+❯ python3 -c "import sys; print('\n'.join(sys.path))"
+
+/workspaces/PythonTurtle-PythonTurtle
+/usr/lib/python312.zip
+/usr/lib/python3.12
+/usr/lib/python3.12/lib-dynload
+/usr/local/lib/python3.12/dist-packages
+/usr/lib/python3/dist-packages
+----
+
+
+----
+❯ python3 -c "import os, sys; print(os.environ['PYTHONPATH']); print(sys.path) if 'PYTHONPATH' in sorted(os.environ) else print('PYTHONPATH is not defined')"  
+/workspaces/PythonTurtle-PythonTurtle
+['', '/workspaces/PythonTurtle-PythonTurtle', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+----
